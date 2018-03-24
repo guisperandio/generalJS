@@ -7,11 +7,8 @@ function start(){
 
     for (let i = 0; i < buttons.length; i++) {
         const element = buttons[i];
-        const id = element.getAttribute('id');
-        console.log(id);
-        element.addEventListener('click', () => {
-            document.getElementById('main-container').className += ' imgReady';
-            buildHtml(id);
+        element.addEventListener('click', function(event){
+            getImgs(this.getAttribute('id'));
         });
     }
 }
