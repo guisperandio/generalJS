@@ -1,0 +1,323 @@
+/* General */
+
+@font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+:root {
+    --card-height: 212px;
+    --card-width: 256px;
+    --yellow-bg: #fcbf0f;
+    --light-blue: #0B87A6;
+    --light-gray: #3b3b3b;
+    --card-bg: #fff;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 12pt;
+}
+
+body,
+h1,
+h2,
+h3,
+a,
+p,
+div,
+span {
+    font-family: "system";
+}
+
+.bg-4 {
+    width: 33.333%;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.no-margin-left {
+    margin-left: 0 !important;
+}
+
+.no-margin-right {
+    margin-right: 0 !important;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.ic {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+}
+
+.ic.ic-flip {
+    background-image: url('../assets/img/flip.png');
+    background-size: contain;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.card-container {
+    position: absolute;
+    width: 683px;
+    height: var(--card-height);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all .5s ease;
+    transform: rotateY(0deg)
+}
+
+
+/* End General */
+
+
+/* cards */
+
+.card-back {
+    display: none;
+}
+
+.card-back .card-info,
+.card-back .card-info .desc {
+    width: 100%;
+}
+
+.card-back .card-info .desc .lit-title {
+    text-transform: none;
+    margin-bottom: 10px;
+}
+
+.card-back .card-info .opt-button .butt {
+    width: 130px !important;
+}
+
+.card-back .card-info .desc .text-overflow {
+    height: 73px;
+    overflow-y: scroll;
+}
+
+.card-back .card-info .desc .text-overflow p {
+    font-size: 1em;
+    line-height: 19px;
+}
+
+
+/* Featured */
+
+.featured {
+    position: absolute;
+    text-align: center;
+    font-size: 23px;
+    padding: 10px 80px;
+    background-color: var(--yellow-bg);
+    font-weight: 800;
+    top: 16px;
+    right: -70px;
+    transform: rotateZ(45deg);
+    -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.3);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Card img */
+
+.card-img {
+    float: left;
+    width: var(--card-width);
+    height: var(--card-height);
+    background-image: url('../assets/img/cassino.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: all 0.2s ease-out;
+}
+
+
+/* card-info */
+
+.card-info {
+    padding: 15px;
+    float: left;
+    width: calc(100% - var(--card-width));
+    height: 100%;
+    background-color: var(--card-bg);
+}
+
+
+/* card-info title */
+
+.card-info .title {
+    text-transform: uppercase;
+    color: var(--light-blue);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.card-info .title .med-title {
+    font-size: 1.2em;
+}
+
+.card-info .title .big-title {
+    font-size: 1.8em;
+}
+
+
+/* card-info desc */
+
+.card-info .desc {
+    margin-bottom: 10px;
+}
+
+.card-info .desc .lit-title {
+    color: #1b1b1b;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.card-info .desc {
+    color: var(--light-gray);
+    font-size: .85em;
+}
+
+
+/* card-info opt buttons */
+
+.card-info .opt-button {
+    margin-top: 15px;
+}
+
+.card-info .opt-button .butt {
+    float: left;
+    text-align: center;
+    font-size: .7em;
+    font-weight: bold;
+    color: var(--light-gray);
+    padding: 10px;
+    border: 2px solid var(--card-bg);
+    cursor: pointer;
+    opacity: .7;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.card-info .opt-button .butt .ic {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    left: -70px;
+    margin: 0 auto;
+    top: 6px;
+    transition: all 0.2s ease;
+}
+
+.card-info .opt-button .butt:hover .ic {
+    opacity: 1;
+}
+
+.card-info .opt-button .butt:hover {
+    opacity: 1;
+}
+
+.card-info .opt-button .butt.butt-gray {
+    background-color: #E6E7E9;
+}
+
+.card-info .opt-button .butt.butt-yellow {
+    background-color: var(--yellow-bg);
+}
+
+
+/* responsible css */
+
+@media (max-width: 690px) {
+    .sm-6 {
+        width: 50%;
+    }
+    .sm-12,
+    .card-img,
+    .card-info {
+        width: 100%;
+    }
+    .card-container {
+        width: 90%;
+        height: 460px;
+    }
+    .card-container .card-img {
+        height: 150px;
+    }
+    .card-container .opt-button {
+        position: absolute;
+        bottom: 11px;
+        width: calc(100% - 30px);
+    }
+    .card-back {
+        height: 100%;
+    }
+    .card-back .card-info .desc .text-overflow {
+        height: 290px;
+    }
+}
+
+
+/* flip effect */
+
+.card-container.flip {
+    transform: rotateY(180deg);
+}
+
+.card-container.flip .card-front {
+    display: none;
+}
+
+.card-container.flip .card-back {
+    display: block;
+    transform: rotateY(180deg);
+}
+
+
+/* scrollbar */
+
+.text-overflow::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+    width: 4px;
+}
+
+.text-overflow::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    width: 2px;
+    border-radius: 12px;
+}
+
+.text-overflow::-webkit-scrollbar-thumb {
+    background-color: #3b3b3b;
+    outline: 1px solid slategrey;
+    width: 12px !important;
+    border-radius: 12px;
+}
