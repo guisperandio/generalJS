@@ -20,6 +20,7 @@ function doButtons(buttonName){
 function injectHtml(){
 
     const allBtns = document.getElementById('all-btns');
+
     const buttons = ['Cow', 'Dog', 'Giraffe'];
 
     buttons.forEach(element => {
