@@ -91,7 +91,10 @@ span {
     transform: rotateY(0deg)
 }
 
-
+.card-container .card-front{
+    height: 100%;
+    overflow: hidden;
+}
 /* End General */
 
 

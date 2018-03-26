@@ -200,6 +200,16 @@ span {
 
 /* responsible css */
 
+@media (max-width: 626px) {
+    .all-btns .btn-container:hover .btn-text {
+        height: 100%;
+        padding-top: 85px;
+        background-color: rgba(0, 0, 0, .6);
+        font-size: 1em !important;
+        transition: var(--transition);
+    }
+}
+
 
 /* scrollbar */
 
