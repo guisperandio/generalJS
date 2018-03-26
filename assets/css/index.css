@@ -102,7 +102,6 @@ b {
     opacity: 1;
     -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.4);
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.4);
-    transform: rotate(540deg);
 }
 
 .menu-list .box-menu:hover span {
@@ -131,7 +130,6 @@ b {
     transition: -webkit-all 666ms cubic-bezier(.3, 0, .237, 1);
     transition: all 666ms cubic-bezier(.3, 0, .237, 1);
     transition: all 666ms cubic-bezier(.3, 0, .237, 1), -webkit-transform 666ms cubic-bezier(.3, 0, .237, 1);
-    transform: rotate(540deg);
 }
 
 .menu-list .box-menu.designMarkup::after {
