@@ -1,11 +1,21 @@
 <?php
     class DateCalcController{
+
+        function __construct($date){
+            $this->_model = new DateCalc($date);
+        }
+
         public function index() {
-            $this->nextDraw = DateCalc::getNextDraw();
+            $this->nextDraw = $this->_model::getNextDraw();
             
-            if(isset($_POST['datetime'])){
-                $this->dateGiven = $_POST['datetime'];
-                $this->resultDate = DateCalc::getGivenDate($this->dateGiven);
+            if(isset($_POST['datetime']) && isset($_POST['hour'])){
+                
+                $this->dateGiven = new stdClass();
+                $this->dateGiven->date = $_POST['datetime'];
+                $this->dateGiven->hour = $_POST['hour'];
+
+                $this->checkDate = $this->_model::checkDate($this->dateGiven, $this->_model->dateToday->format('Y-m-d H:i'));
+                $this->resultDate = $this->_model::getGivenDate($this->dateGiven, $this->checkDate);
             }
             
             require_once('views/datecalc/index.php');

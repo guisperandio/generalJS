@@ -4,8 +4,12 @@ const headerName = 'myHeader';
 
 function getIcons(){
     let buttonIcons = {
+        'Home': {
+            'icon': '<span class="fas fa-home ic-btn"></span>',
+            'link': './index.html'
+        },
         'DesignMarkup': {
-            'icon': '<span class="fas fa-object-group ic-btn"></span>',
+            'icon': '<span class="fab fa-html5 ic-btn"></span>',
             'link': './designMarkup/index.html'
         },
         'Javascript': {
@@ -17,12 +21,8 @@ function getIcons(){
             'link': './php/index.php'
         },
         'LinkedIn': {
-            'icon': '<span class="fab fa-linkedin ic-btn"></span>',
+            'icon': '<span class="fab fa-linkedin ic-btn"></span>My ',
             'link': 'https://linkedin.com/in/guisperandio'
-        },
-        'Github': {
-            'icon': '<span class="fab fa-github-square ic-btn"></span>',
-            'link': 'https://github.com/guisperandio'
         }
     }
 
@@ -78,7 +78,7 @@ async function buildMenu(){
     let myHeader = document.getElementById(headerName);
     let wrapper = document.getElementById(containerName);
     
-    let buttons = ['Design Markup', 'Javascript', 'PHP', 'LinkedIn', 'Github'];
+    let buttons = ['Home', 'Design Markup', 'Javascript', 'PHP', 'LinkedIn'];
     
     let htmlHeader = await getHeader();    
     let htmlMenu = await getMenu(buttons);
@@ -107,14 +107,18 @@ function setBtnList(elements){
                     await setTimeout(() => {
                         document.getElementById('menu-drawer').classList.toggle('show')
                         document.getElementById('menu-btn').classList.toggle('flip')
-                    }, 300);
+                    }, 700);
                     clearTimeout();
 
                     let btnLinks = getIcons();
                     let object = document.getElementById('myObject');
-                    console.log(this.getAttribute('data-id').replace(' ', ''));
-                    if (this.getAttribute('data-id').replace(' ', '') != 'LinkedIn' && this.getAttribute('data-id').replace(' ', '') != 'Github') {
+                    if (this.getAttribute('data-id').replace(' ', '') != 'LinkedIn') {
+                        
                         object.setAttribute('data', btnLinks[this.getAttribute('data-id').replace(' ', '')].link);
+                        let container = await document.getElementById('card-container');
+                        
+                        if(container !== null)
+                            container.remove();
                     } else {
                         window.open(btnLinks[this.getAttribute('data-id').replace(' ', '')].link, '_blank');
                     }

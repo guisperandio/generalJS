@@ -8,7 +8,7 @@
 }
 
 :root {
-    --card-height: 300px;
+    --card-height: 356px;
     --card-width: 256px;
     --yellow-bg: #fcbf0f;
     --light-blue: #0B87A6;
@@ -24,7 +24,6 @@
 
 body {
     font-size: 12pt;
-    background-color: #fafafa;
 }
 
 body,
@@ -103,37 +102,48 @@ span {
 }
 
 .card-container form span {
-    margin: 20px 0 0px;
+    margin-bottom: 10px;
 }
 
 .card-container form p {
     position: relative;
 }
-
+.card-container form label{
+    display: block;
+    margin: 10px;
+}
+.card-container form label.date input{
+    padding-left: 66px;
+}
+.card-container form label.hour input{
+    padding-left: 37px;
+}
 .card-container form .datetime {
-    margin: 9px -11px 20px 0;
+    margin: 0;
     padding: 10px;
-    border-radius: 30px 10px 16px 30px;
+    border-radius: 30px;
     border: 1px solid #f1f1f1;
     color: #1b1b1b;
     font-family: "system";
     font-size: 20px;
     text-align: center;
     outline: 0;
+    width: 70%;
 }
 
 .card-container form button {
-    position: absolute;
+    position: relative;
     border: 1px solid #f1f1f1;
     background-color: #DC3545;
     color: #fff;
-    width: 30px;
     height: 52px;
     text-transform: uppercase;
-    border-radius: 0px 60px 60px 0px;
-    padding: 17px 31px 27px 10px;
+    border-radius: 30px;
+    padding: 10px;
     text-align: center;
-    top: 25px;
+    width: 70%;
+    margin: 10px;
+    cursor: pointer;
 }
 
 

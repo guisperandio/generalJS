@@ -7,17 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/index.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./modules/header/css/header.css" />
-    
 </head>
 <body>
     <div class="container" id="main-container">
         <header id="myHeader"></header>
-        <object type="text/html" data="./welcome.html" id="myObject">
-            <p>
-                teste
-            </p>
-        </object>
+        <div class="card-container" id="card-container">
+            <span class="bg-title">Hi, I'm Guilherme Santos</span>
+            <p>Welcome to my
+                <b>frontend technical test</b> for BetBright.</p>
+            <P>From this page you will have access to the three tests. To start, choose one of them below. You can access the others
+                by clicking the menu above.
+    
+                <div class="menu-list">
+                    <div class="box-menu designMarkup" id="designMarkup" data-href="./designMarkup">
+                        <span class="box-title">
+                            &lt;&frasl;designMarkup&gt;
+                        </span>
+                    </div>
+                    <div class="box-menu js" id="js" data-href="./js">
+                        <span class="box-title">
+                            &lt;&frasl;javascript&gt;
+                        </span>
+                    </div>
+                    <div class="box-menu php" id="php" data-href="./php">
+                        <span class="box-title">
+                            &lt;&frasl;php&gt;
+                        </span>
+                    </div>
+                </div>
+        </div>
+        <script>
+            function start() {
+                let initialButtons = document.getElementsByClassName('box-menu');
+
+                for (let i = 0; i < initialButtons.length; i++) {
+                    const element = initialButtons[i];
+                    element.addEventListener('click', async function (event) {
+                        let object = document.getElementById('myObject');
+                        let container = document.getElementById('card-container');
+                        container.remove();
+                        object.setAttribute('data', element.getAttribute('data-href'));
+
+                        let menuButtons = document.getElementsByClassName('menu-item');
+                        
+                    });
+                }
+            }
+            start();
+        </script>
+        <object type="text/html" data="" id="myObject"></object>
     </div>
     <script src="./modules/header/js/header.js"></script>
 </body>

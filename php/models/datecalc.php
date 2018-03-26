@@ -1,10 +1,22 @@
 <?php 
     class DateCalc{
 
-        public $formDate;
+        public $dateToday;
 
-        public function __constructor($formDate){
-            $this->formDate = $formDate;
+        public function __construct($dateToday){
+            $this->dateToday = $dateToday;
+        }
+
+        public static function checkDate($data, $dateToday){
+
+            $data = new Datetime(date('Y-m-d H:i', strtotime($data->date.' '.$data->hour)));
+            $dateToday = new Datetime(date('Y-m-d H:i', strtotime($dateToday)));
+
+            if($data < $dateToday){
+                return 'The closest draw to the reported date was:';
+            } else{
+                return 'The closest draw to the reported date is:';
+            }
         }
 
         public static function getNextDraw(){
@@ -34,7 +46,9 @@
             }
         }
 
-        public static function getGivenDate($givenDate){
+        public static function getGivenDate($givenDate, $time){
+
+            $givenDate = $givenDate->date.' '.$givenDate->hour;
 
             $dayWeek = date('D', strtotime($givenDate));
             
@@ -59,6 +73,7 @@
             $result->givenDate->month = date('F', $day);
             $result->givenDate->year = date('Y', $day);
             $result->givenDate->hour = date('H:i', $day);
+            $result->givenDate->time = $time;
 
             return $result;
         }

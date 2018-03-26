@@ -5,7 +5,9 @@
     switch($controller) {
       case 'datecalc':
         require_once('models/datecalc.php');
-        $controller = new DateCalcController();
+        $dateToday = new Datetime(date('d-m-Y H:i'));
+        $controller = new DateCalcController($dateToday);
+        
       break;
     }
     

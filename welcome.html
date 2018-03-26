@@ -7,66 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/main.css" />
-    <style>
-        .container{
-            top: 0;
-        }
-        .card-container{
-            text-align: left;
-            width: 520px;
-            left: -225px;
-            height: 430px;
-        }
-        *{
-            font-family: 'Times New Roman', Times, serif !important;
-        }
-        .bg-title{
-            font-size: 50px;
-            color: #333;
-        }
-        .bg-title + p{
-            font-size: 22px;
-            margin-top: 4px;
-            line-height: 20px;
-            color: #555;
-        }
-        .bg-title + p + p{
-            color: #777;
-            font-size: 17px;
-            margin-top: 30px;
-            line-height: 23px;
-        }
-        b{
-            font-weight: bold;
-        }
-        @media (max-width: 690px){
-            .card-container {
-                width: 90%;
-                height: 100vh;
-                left: 0 !important;
-                top: 220px;
-            }
-        }
-    </style>
+    
 </head>
 <body>
     <div class="container" id="main-container">
         <div class="card-container" id="card-container">
             <span class="bg-title">Hi, I'm Guilherme Santos</span>
             <p>Welcome to my <b>frontend technical test</b> for BetBright.</p>
-            <P>From this page you will have access to the three tests. To access them simply click on the menu and select the desired option.
-            <br/>
-            <br/>
-            If you prefer, you can also access each test separately by going straight to the root folder of each of them. The folders
-            are named as follows: <br/><br/>- Markup Design Test: designMarkup <br/>- Javascript Test: js <br/>- PHP Testing: php 
-            <br/>
-            <br/>
-            Simple doesn't it? 
-            <br/>
-            <br/>
-            Thanks
-            for the opportunity to take the test and hope you like it! </P>
+            <P>From this page you will have access to the three tests. To start, choose one of them below. You can access the others by clicking the menu above.
+            
+            <div class="menu-list">
+                <div class="box-menu designMarkup" id="designMarkup" data-href="./designMarkup">
+                    <span class="box-title">
+                            &lt;&frasl;designMarkup&gt;
+                    </span>
+                </div>
+                <div class="box-menu js" id="js" data-href="./js">
+                    <span class="box-title">
+                        &lt;&frasl;javascript&gt;
+                    </span>
+                </div>
+                <div class="box-menu php" id="php" data-href="./php">
+                    <span class="box-title">
+                        &lt;&frasl;php&gt;
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        function start(){
+            let initialButtons = document.getElementsByClassName('box-menu');
+
+            for (let i = 0; i < initialButtons.length; i++) {
+                const element = initialButtons[i];
+                element.addEventListener('click', function(event){
+                    
+                    let object = document.getElementById('myObject');
+                    object.setAttribute('data', element.getAttribute('data-href'));
+                });
+            }
+        }
+        start();
+    </script>
 </body>
 </html>
