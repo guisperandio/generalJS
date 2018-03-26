@@ -1,1 +1,1 @@
-# betbright
+# Frontend Technical Test - BetBright
