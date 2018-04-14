@@ -10,6 +10,7 @@
         public static function checkDate($data, $dateToday){
 
             $data = new Datetime(date('Y-m-d H:i', strtotime($data->date.' '.$data->hour)));
+            
             $dateToday = new Datetime(date('Y-m-d H:i', strtotime($dateToday)));
 
             if($data < $dateToday){
