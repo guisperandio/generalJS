@@ -1,1 +1,1 @@
-# Frontend Technical Test - BetBright
+General JS exercise
